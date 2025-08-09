@@ -1,12 +1,8 @@
-import React, {ComponentType} from "react";
 import {LucideIcon} from "lucide-react";
+import {IconifyIcon} from "@iconify/react";
 
-type IconComponent = ComponentType<React.SVGProps<SVGSVGElement> & {
-  size?: number | string;
-  color?: string;
-}>
 
-export interface ProductType {
+export interface Product {
   icon: LucideIcon
   title: string
   description: string
@@ -16,7 +12,7 @@ export interface ProductType {
 
 export interface Technology {
   name: string
-  icon: IconComponent
+  icon: IconifyIcon
 }
 
 
@@ -25,7 +21,7 @@ export interface Contribution {
   description: string
   language: string
   languageColor: string
-  icon: IconComponent
+  icon: LucideIcon
   distribution: {
     githubUrl: string
     mavenUrl?: string

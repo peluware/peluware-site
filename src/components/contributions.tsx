@@ -4,7 +4,9 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {Button} from "@/components/ui/button";
 import {Translations, useLanguage} from "@/contexts/languaje-context";
 import {Contribution} from "@/types/data";
-import {GithubOriginal, MavenOriginal} from "devicons-react";
+import githubIcon from "@iconify/icons-devicon/github";
+import mavenIcon from "@iconify/icons-devicon/maven";
+import {Icon} from "@iconify/react";
 
 const translations: Translations = {
   es: {
@@ -93,7 +95,7 @@ export default function Contributions() {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-              <GithubOriginal className="h-3 w-3 mr-1"/>
+              <Icon icon={githubIcon} className="h-3 w-3 mr-1"/>
               {t('contribution.badge')}
             </Badge>
           </div>
@@ -135,7 +137,7 @@ export default function Contributions() {
                     {contribution.distribution.githubUrl &&
                       <Button variant="ghost" size="sm" className="group-hover:text-primary" asChild>
                         <a href={contribution.distribution.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <GithubOriginal className="h-4 w-4 mr-1"/>
+                          <Icon icon={githubIcon} className="h-4 w-4 mr-1"/>
                           {t('contribution.github')}
                         </a>
                       </Button>
@@ -143,7 +145,7 @@ export default function Contributions() {
                     {contribution.distribution.mavenUrl &&
                       <Button variant="ghost" size="sm" className="group-hover:text-primary" asChild>
                         <a href={contribution.distribution.mavenUrl} target="_blank" rel="noopener noreferrer">
-                          <MavenOriginal className="h-4 w-4 mr-1"/>
+                          <Icon icon={mavenIcon} className="h-4 w-4 mr-1"/>
                           {t('contribution.maven')}
                         </a>
                       </Button>
@@ -164,7 +166,7 @@ export default function Contributions() {
             <div className="flex items-center justify-center space-x-4">
               <Button variant="outline" size="lg" asChild>
                 <a href="https://github.com/peluware" target="_blank" rel="noopener noreferrer">
-                  <GithubOriginal className="h-4 w-4 mr-2"/>
+                  <Icon icon={githubIcon} className="h-4 w-4 mr-2"/>
                   {t('contribution.github')}
                 </a>
               </Button>

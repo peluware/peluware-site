@@ -39,7 +39,7 @@ export default function Hero() {
               {t('hero.subtitle')}
             </p>
           </div>
-          <div className="space-x-4">
+          <div className="space-x-4 space-y-2">
             <Button size="lg" className="h-12 px-8">
               {t('hero.cta1')}
               <ArrowRight className="ml-2 h-4 w-4"/>

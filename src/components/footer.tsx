@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import {Translations, useLanguage} from "@/contexts/languaje-context";
 
-// Traducciones globales (las que ya tenías)
 const transalations: Translations = {
   es: {
-    'footer.description': 'Software innovador con la agilidad de Pelusa. Soluciones tecnológicas hechas en Ecuador.',
+    'footer.description': 'Software personalizado para tu negocio. Calidad, seguridad y escalabilidad garantizadas.',
     'footer.products': 'Productos',
     'footer.company': 'Empresa',
     'footer.support': 'Soporte',
@@ -18,9 +17,12 @@ const transalations: Translations = {
     'footer.rights': 'Todos los derechos reservados.',
     'footer.terms': 'Términos de Servicio',
     'footer.privacy': 'Política de Privacidad',
+    'products.billing.title': 'PeluWare Billing',
+    'nav.about': 'Nosotros',
+    'nav.contact': 'Contacto',
   },
   en: {
-    'footer.description': 'Innovative software with Pelusa\'s agility. Technological solutions made in Ecuador.',
+    'footer.description': 'Custom software for your business. Guaranteed quality, security, and scalability.',
     'footer.products': 'Products',
     'footer.company': 'Company',
     'footer.support': 'Support',
@@ -33,6 +35,9 @@ const transalations: Translations = {
     'footer.rights': 'All rights reserved.',
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
+    'products.billing.title': 'PeluWare Billing',
+    'nav.about': 'About Us',
+    'nav.contact': 'Contact',
   }
 }
 

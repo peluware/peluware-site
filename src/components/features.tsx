@@ -1,8 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ShieldCheck, Users, Layers3, Settings } from "lucide-react";
-import Image from "next/image";
 import { Translations, useLanguage } from "@/contexts/languaje-context";
-
+import IsometricTech from "@/assets/isometric.svg"
 const translations: Translations = {
   es: {
     'features.badge': '¿Por qué elegirnos?',
@@ -90,14 +89,17 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="flex lg:justify-end justify-center">
-            <Image
-              src="/logo-bg.png"
-              alt="PeluWare Logo"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-lg"
-            />
+          <div className="flex lg:justify-end justify-center items-center">
+            <div className="w-full max-w-md">
+              <IsometricTech width="100%"/>
+            </div>
+            {/*<Image*/}
+            {/*  src="/logo-bg.png"*/}
+            {/*  alt="PeluWare Logo"*/}
+            {/*  width={400}*/}
+            {/*  height={400}*/}
+            {/*  className="rounded-lg shadow-lg"*/}
+            {/*/>*/}
           </div>
         </div>
       </div>

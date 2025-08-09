@@ -12,8 +12,12 @@ import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {LoaderCircle, Mail, MapPin, Phone, Send} from "lucide-react";
-import {GithubOriginal, LinkedinOriginal, TwitterOriginal} from "devicons-react";
 import {Translations, useLanguage} from "@/contexts/languaje-context";
+import githubIcon from "@iconify/icons-devicon/github";
+import linkedinIcon from "@iconify/icons-devicon/linkedin";
+import twitterIcon from "@iconify/icons-devicon/twitter";
+import {Icon} from "@iconify/react";
+import useIsMobile from "@/hooks/use-is-mobile";
 
 const schema = z.object({
   nombre: z.string().min(2),
@@ -63,6 +67,7 @@ const translations: Translations = {
 
 export default function Contact() {
   const {t} = useLanguage(translations)
+  const isMobile = useIsMobile();
   
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
@@ -126,8 +131,11 @@ export default function Contact() {
   
   return (
     <>
-      <section id="contact" className="w-full py-12 md:py-20 lg:py-25 bg-muted/50">
-        <div className="container px-4 md:px-6">
+      <section
+        id="contact"
+        className="w-full py-12 md:py-20 lg:py-25 bg-muted/50 "
+      >
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {t('contact.title')}
@@ -137,7 +145,7 @@ export default function Contact() {
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="space-y-6">
+            <div className="space-y-6 w-full">
               <div>
                 <h3 className="text-xl font-semibold mb-4">{t('contact.info')}</h3>
                 <div className="space-y-4">
@@ -160,24 +168,24 @@ export default function Contact() {
                 <div className="flex space-x-4">
                   <Button variant="outline" size="icon" asChild>
                     <a href="https://twitter.com/peluware" target="_blank" rel="noopener noreferrer">
-                      <TwitterOriginal className="h-4 w-4"/>
+                      <Icon icon={twitterIcon} className="h-4 w-4"/>
                     </a>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
                     <a href="https://www.linkedin.com/company/peluware" target="_blank" rel="noopener noreferrer">
-                      <LinkedinOriginal className="h-4 w-4"/>
+                      <Icon icon={linkedinIcon} className="h-4 w-4"/>
                     </a>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
                     <a href="https://github.com/peluware" target="_blank" rel="noopener noreferrer">
-                      <GithubOriginal className="h-4 w-4"/>
+                      <Icon icon={githubIcon} className="h-4 w-4"/>
                     </a>
                   </Button>
                 </div>
               </div>
             </div>
             
-            <Card>
+            <Card className="w-full max-w-full ">
               <CardHeader>
                 <CardTitle>{t('contact.form.title')}</CardTitle>
                 <CardDescription>{t('contact.form.subtitle')}</CardDescription>
@@ -243,19 +251,20 @@ export default function Contact() {
                       control={form.control}
                       name="captcha"
                       render={({field}) => (
-                        <FormItem>
+                        <FormItem className="flex flex-col">
                           <FormLabel>Captcha</FormLabel>
-                          <FormControl>
-                            <div className="p-2 mx-auto">
-                              <Turnstile
-                                ref={turnstileRef}
-                                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                                onSuccess={(token) => {
-                                  field.onChange(token)
-                                  setCaptchaReady(true)
-                                }}
-                              />
-                            </div>
+                          <FormControl className="items-center mx-auto">
+                            <Turnstile
+                              ref={turnstileRef}
+                              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                              onSuccess={(token) => {
+                                field.onChange(token)
+                                setCaptchaReady(true)
+                              }}
+                              options={{
+                                size: isMobile ? "compact" : "normal",
+                              }}
+                            />
                           </FormControl>
                           <FormMessage/>
                         </FormItem>

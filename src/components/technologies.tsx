@@ -1,6 +1,14 @@
 import {Translations, useLanguage} from "@/contexts/languaje-context";
 import {Technology} from "@/types/data";
-import {CsharpPlain, DockerPlain, JavaPlain, NextjsPlain, SpringOriginal, TypescriptPlain, UnityPlain} from "devicons-react";
+import reactIcon from "@iconify/icons-devicon/react";
+import javaIcon from "@iconify/icons-devicon/java";
+import csharpIcon from "@iconify/icons-devicon/csharp";
+import springIcon from "@iconify/icons-devicon/spring";
+import nextjsIcon from "@iconify/icons-devicon/nextjs";
+import dockerIcon from "@iconify/icons-devicon/docker";
+import unityIcon from "@iconify/icons-devicon/unity";
+import typescriptIcon from "@iconify/icons-devicon/typescript";
+import {Icon} from "@iconify/react";
 
 const translations: Translations = {
   es: {
@@ -14,13 +22,14 @@ const translations: Translations = {
 }
 
 const technologies: Technology[] = [
-  {name: "Java", icon: JavaPlain},
-  {name: "C#", icon: CsharpPlain},
-  {name: "Spring", icon: SpringOriginal},
-  {name: "Next.js", icon: NextjsPlain},
-  {name: "Docker", icon: DockerPlain},
-  {name: "Unity", icon: UnityPlain},
-  {name: "TypeScript", icon: TypescriptPlain}
+  {name: "Java", icon: javaIcon},
+  {name: "C#", icon: csharpIcon},
+  {name: "Spring", icon: springIcon},
+  {name: "Next.js", icon: nextjsIcon},
+  {name: "React", icon: reactIcon},
+  {name: "Docker", icon: dockerIcon},
+  {name: "Unity", icon: unityIcon},
+  {name: "TypeScript", icon: typescriptIcon}
 ];
 
 export default function Technologies() {
@@ -57,8 +66,10 @@ export default function Technologies() {
                 {/* Contenedor del ícono */}
                 <div className="relative">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-muted/80 to-muted/40 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ease-out border border-border/50">
-                    <tech.icon
-                      size={48}
+                    <Icon
+                      icon={tech.icon}
+                      width={55}
+                      height={55}
                       className="text-muted-foreground group-hover:text-primary transition-colors duration-300"
                     />
                   </div>
@@ -76,7 +87,7 @@ export default function Technologies() {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
           @keyframes infinite-scroll {
               0% {
                   transform: translateX(0);

@@ -2,7 +2,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {Badge} from "@/components/ui/badge";
 import {CheckCircle, Clock, Code} from "lucide-react";
 import {Translations, useLanguage} from "@/contexts/languaje-context";
-import {ProductType} from "@/types/data";
+import {Product} from "@/types/data";
 
 const translations: Translations = {
   es: {
@@ -33,7 +33,7 @@ const translations: Translations = {
 export default function Products() {
   const {t} = useLanguage(translations)
   
-  const products: ProductType[] = [
+  const products: Product[] = [
     {
       icon: Code,
       title: t('products.billing.title'),
