@@ -8,6 +8,7 @@ import Technologies from "@/components/technologies";
 import Contributions from "@/components/contributions";
 import AboutUs from "@/components/about-us";
 import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function PeluWarePage() {
   
@@ -23,7 +24,7 @@ export default function PeluWarePage() {
         <AboutUs/>
         <Contact/>
       </main>
-    
+      <Footer/>
     </div>
   )
 }
