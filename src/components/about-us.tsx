@@ -13,8 +13,6 @@ const translations: Translations = {
     'about.values.innovation': 'Innovación: Evolucionamos constantemente junto a la tecnología',
     'about.values.transparency': 'Transparencia: Comunicación abierta con nuestros clientes y proveedores',
     'about.values.commitment': 'Compromiso: Enfocados en resultados reales y medibles',
-    'about.pelusa': 'Pelusa',
-    'about.inspiration': 'Nuestra inspiración interna',
   },
   en: {
     'about.title': 'About PeluWare',
@@ -27,8 +25,6 @@ const translations: Translations = {
     'about.values.innovation': 'Innovation: We constantly evolve alongside technology',
     'about.values.transparency': 'Transparency: Open communication with our clients and partners',
     'about.values.commitment': 'Commitment: Focused on real and measurable results',
-    'about.pelusa': 'Pelusa',
-    'about.inspiration': 'Our internal inspiration',
   }
 }
 
@@ -80,22 +76,14 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="flex items-center justify-center">
-                <Image
-                  src="/pelusa.webp"
-                  alt="Pelusa - Nuestra Inspiración"
-                  width={200}
-                  height={200}
-                  className="w-64 h-64 object-contain  rounded-full"
-                />
-              </div>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-background border rounded-lg px-4 py-2 shadow-lg">
-                <p className="text-sm font-semibold text-center">{t('about.pelusa')}</p>
-                <p className="text-xs text-muted-foreground text-center">{t('about.inspiration')}</p>
-              </div>
-            </div>
+          <div className="flex justify-center sm:justify-end ">
+            <Image
+              src="/logo-bg.png"
+              alt="Pelusa - Nuestra Inspiración"
+              width={200}
+              height={200}
+              className="w-64 h-64 object-contain rounded-4xl shadow-lg"
+            />
           </div>
         </div>
       </div>
