@@ -6,7 +6,7 @@ const translations: Translations = {
   es: {
     'hero.title1': 'Soluciones de Software',
     'hero.title2': 'Innovadoras y Confiables',
-    'hero.subtitle': 'En PeluWare creamos herramientas digitales que simplifican tu vida y hacen crecer tu negocio. Desarrollo de software a medida, automación de procesos y soluciones tecnológicas',
+    'hero.subtitle': 'En PeluWare creamos herramientas digitales que simplifican tu vida y hacen crecer tu negocio. Desarrollo de software a medida, automatización de procesos y soluciones tecnológicas',
     'hero.cta1': 'Conoce Más',
     'hero.cta2': 'Agenda una Consulta',
     'hero.feature1': 'Precios flexibles y soluciones personalizadas',
